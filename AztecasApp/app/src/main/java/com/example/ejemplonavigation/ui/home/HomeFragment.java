@@ -79,18 +79,16 @@ public class HomeFragment extends Fragment {
         linearLayout.addView(imageButton2);
 
 
-        // Obtén el contenedor del layout
-        container = root.findViewById(R.id.layoutPrincipal); // Suponiendo que el contenedor tiene el id "text_container"
+        container = root.findViewById(R.id.layoutPrincipal);
 
         container.addView(linearLayout);
 
-        // Itera para agregar TextView
-        for (int i = 0; i < AfterLogin.places.size(); i++) { // Por ejemplo, agregaremos 5 TextView
+        for (int i = 0; i < AfterLogin.places.size(); i++) {
             Button button = new Button(requireContext());
             button.setTextSize(40);
             button.setGravity(Gravity.CENTER);
             button.setText(AfterLogin.places.get(i).getName());
-            container.addView(button); // Agrega el TextView al contenedor
+            container.addView(button);
         }
 
         return root;
