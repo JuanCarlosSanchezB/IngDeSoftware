@@ -11,13 +11,19 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.ejemplonavigation.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class AfterLogin extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.zip.Inflater;
 
+public class AfterLogin extends AppCompatActivity {
+    public static ArrayList<Place> places;
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Places places = new Places();
+        AfterLogin.places = places.places;
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
