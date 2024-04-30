@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -19,10 +21,12 @@ import com.example.ejemplonavigation.AfterLogin;
 import com.example.ejemplonavigation.Places;
 import com.example.ejemplonavigation.R;
 import com.example.ejemplonavigation.databinding.FragmentHomeBinding;
+import com.example.ejemplonavigation.databinding.FragmentNotificationsBinding;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    Places places;
     private LinearLayout container; // El contenedor donde agregarás los TextView
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -33,62 +37,31 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        LinearLayout linearLayout = new LinearLayout(requireContext());
-        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        ));
-        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-        linearLayout.setPadding(25, 100, 0, 0);
+        // Obtener la ActionBar
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            // Ocultar la ActionBar
+            actionBar.hide();
+        }
 
-        ImageButton imageButton1 = new ImageButton(requireContext());
-        imageButton1.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        ));
-        imageButton1.setBackground(ContextCompat.getDrawable(requireContext(), android.R.color.transparent));
-        imageButton1.setImageResource(R.drawable.iconubi);
-        LinearLayout.LayoutParams params1 = (LinearLayout.LayoutParams) imageButton1.getLayoutParams();
-        params1.setMarginEnd(20);
-        imageButton1.setLayoutParams(params1);
+        // Obtén el contenedor del layout
+        container = root.findViewById(R.id.layoutPrincipal); // Suponiendo que el contenedor tiene el id "text_container"
 
-        TextView textView = new TextView(requireContext());
-        textView.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        ));
-        textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.black));
-        textView.setTextSize(16);
-        textView.setPadding(0, 20, 0, 0);
-        textView.setText("Universidad de las Americas Puebla");
+        // Infla el layout XML "user.xml"
+        View userView = inflater.inflate(R.layout.panel_ubicacion, container, false);
 
-        ImageButton imageButton2 = new ImageButton(requireContext());
-        imageButton2.setId(View.generateViewId());
-        imageButton2.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.MATCH_PARENT
-        ));
-        imageButton2.setBackground(ContextCompat.getDrawable(requireContext(), android.R.color.transparent));
-        imageButton2.setImageResource(R.drawable.botoncarrito);
-        LinearLayout.LayoutParams params2 = (LinearLayout.LayoutParams) imageButton2.getLayoutParams();
-        params2.setMarginStart(25);
-        imageButton2.setLayoutParams(params2);
+        container.addView(userView);
 
-        linearLayout.addView(imageButton1);
-        linearLayout.addView(textView);
-        linearLayout.addView(imageButton2);
+        places = new Places(getContext());
 
-
-        container = root.findViewById(R.id.layoutPrincipal);
-
-        container.addView(linearLayout);
-
-        for (int i = 0; i < AfterLogin.places.size(); i++) {
-            Button button = new Button(requireContext());
-            button.setTextSize(40);
-            button.setGravity(Gravity.CENTER);
-            button.setText(AfterLogin.places.get(i).getName());
-            container.addView(button);
+        for(int i = 0; i < places.places.size();i++){
+            // Infla el layout XML "user.xml"
+            View temp = inflater.inflate(R.layout.panel_place, container, false);
+            ImageButton imageButton = temp.findViewById(R.id.imagePanel);
+            imageButton.setImageBitmap(places.places.get(i).getImage());
+            Button button = temp.findViewById(R.id.textPanel);
+            button.setText(places.places.get(i).getName());
+            container.addView(temp);
         }
 
         return root;

@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -26,16 +28,16 @@ public class DashboardFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        // Obtener la ActionBar
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            // Ocultar la ActionBar
+            actionBar.hide();
+        }
 
         // Obtén el contenedor del layout
         container = root.findViewById(R.id.layoutPrincipal); // Suponiendo que el contenedor tiene el id "text_container"
 
-        // Itera para agregar TextView
-        for (int i = 0; i < 3; i++) { // Por ejemplo, agregaremos 5 TextView
-            TextView textView = new TextView(requireContext());
-            textView.setText("TextView " + i);
-            container.addView(textView); // Agrega el TextView al contenedor
-        }
 
         return root;
     }

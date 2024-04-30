@@ -1,15 +1,21 @@
 package com.example.ejemplonavigation;
 
-import android.media.Image;
+import android.graphics.Bitmap;
 
 public class Place {
     private String name;
-    private Image image;
-    public Place(String name)
-    {
+    private Bitmap image;
+
+    public Place(String name, Bitmap image) {
         this.name = name;
+        this.image = image;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
+    }
+
+    public Bitmap getImage() {
+        return image;
     }
 }
