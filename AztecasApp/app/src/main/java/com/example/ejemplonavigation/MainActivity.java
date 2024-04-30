@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AfterLogin.class);
-                //intent.putExtra("clave", "valor");
                 startActivity(intent);
                 // Muestra un Toast cuando el botón es presionado
                 Toast.makeText(MainActivity.this, "Sesión iniciada", Toast.LENGTH_SHORT).show();

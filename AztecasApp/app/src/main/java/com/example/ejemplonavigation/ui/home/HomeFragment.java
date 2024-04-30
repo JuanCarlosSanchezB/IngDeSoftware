@@ -31,7 +31,7 @@ import com.example.ejemplonavigation.databinding.FragmentNotificationsBinding;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    Places places;
+    public static Places places;
     private LinearLayout container; // El contenedor donde agregarás los TextView
 
     @SuppressLint("SetTextI18n")
@@ -60,6 +60,7 @@ public class HomeFragment extends Fragment {
 
         places = new Places(getContext());
 
+
         for(int i = 0; i < places.places.size();i++){
             // Infla el layout XML "user.xml"
             View temp = inflater.inflate(R.layout.panel_place, container, false);
@@ -69,10 +70,24 @@ public class HomeFragment extends Fragment {
             button.setText(places.places.get(i).getName());
             TextView textView = temp.findViewById(R.id.placeDuration);
             textView.setText(places.places.get(i).getDuration()+" min");
+            int finalI = i;
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getActivity(), MenuActivity.class);
+                    // Añadir datos al Intent
+                    intent.putExtra("PANEL", finalI);
+
+                    //intent.putExtra("clave", "valor");
+                    startActivity(intent);
+                    // Muestra un Toast cuando el botón es presionado
+                }
+            });
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), MenuActivity.class);
+                    intent.putExtra("PANEL", finalI);
                     //intent.putExtra("clave", "valor");
                     startActivity(intent);
                     // Muestra un Toast cuando el botón es presionado
