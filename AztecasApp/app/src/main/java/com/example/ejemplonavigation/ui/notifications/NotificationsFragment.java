@@ -1,27 +1,20 @@
 package com.example.ejemplonavigation.ui.notifications;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.ejemplonavigation.AfterLogin;
-import com.example.ejemplonavigation.MainActivity;
-import com.example.ejemplonavigation.PaymentActivity;
 import com.example.ejemplonavigation.R;
 import com.example.ejemplonavigation.databinding.FragmentNotificationsBinding;
 
 public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
-    Button payment;
 
     private LinearLayout container; // El contenedor donde agregarás el layout XML
 
@@ -39,19 +32,6 @@ public class NotificationsFragment extends Fragment {
 
         // Agrega el layout inflado al contenedor
         container.addView(userView);
-
-        // Encuentra el botón por su ID y configura un OnClickListener
-        payment = root.findViewById(R.id.payment);
-        payment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), PaymentActivity.class);
-                //intent.putExtra("clave", "valor");
-                startActivity(intent);
-                // Muestra un Toast cuando el botón es presionado
-
-            }
-        });
 
         return root;
     }
