@@ -1,5 +1,7 @@
 package com.example.ejemplonavigation.ui.home;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -9,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -18,6 +21,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.ejemplonavigation.AfterLogin;
+import com.example.ejemplonavigation.MainActivity;
+import com.example.ejemplonavigation.MenuActivity;
 import com.example.ejemplonavigation.Places;
 import com.example.ejemplonavigation.R;
 import com.example.ejemplonavigation.databinding.FragmentHomeBinding;
@@ -29,6 +34,7 @@ public class HomeFragment extends Fragment {
     Places places;
     private LinearLayout container; // El contenedor donde agregarás los TextView
 
+    @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -61,6 +67,17 @@ public class HomeFragment extends Fragment {
             imageButton.setImageBitmap(places.places.get(i).getImage());
             Button button = temp.findViewById(R.id.textPanel);
             button.setText(places.places.get(i).getName());
+            TextView textView = temp.findViewById(R.id.placeDuration);
+            textView.setText(places.places.get(i).getDuration()+" min");
+            imageButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), MenuActivity.class);
+                    //intent.putExtra("clave", "valor");
+                    startActivity(intent);
+                    // Muestra un Toast cuando el botón es presionado
+                }
+            });
             container.addView(temp);
         }
 

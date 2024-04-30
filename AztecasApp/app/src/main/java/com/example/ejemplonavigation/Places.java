@@ -20,10 +20,12 @@ public class Places {
 
         // Crea objetos Place
         Place place1 = new Place("Fast Fruit", bitmap);
+        place1.setDuration(10);
         places.add(place1);
 
         // Si Subway usa la misma imagen, puedes reutilizar 'bitmap'
         Place place2 = new Place("Subway", bitmapsubway);
+        place2.setDuration(17);
         places.add(place2);
     }
 }

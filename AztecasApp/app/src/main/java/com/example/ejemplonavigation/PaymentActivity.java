@@ -21,10 +21,6 @@ public class PaymentActivity extends AppCompatActivity {
     }
 
     public void goBack(View view) {
-        // Crear un Intent para abrir la nueva actividad
-        Intent intent = new Intent(this, AfterLogin.class);
-
-        // Iniciar la nueva actividad
-        startActivity(intent);
+        finish();
     }
 }
