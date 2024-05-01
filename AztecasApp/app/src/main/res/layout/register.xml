@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3E9D6">
+
+    <LinearLayout
+        android:id="@+id/registerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="244dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:text="Registro"
+            android:textAlignment="center"
+            android:textColor="#216869"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_button"
+            android:layout_marginBottom="35dp"
+            android:selectAllOnFocus="false"
+            android:text="Nombre"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#49A078"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/lastnames"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_button"
+            android:layout_marginBottom="35dp"
+            android:selectAllOnFocus="false"
+            android:text="Apellidos"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#49A078"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_button"
+            android:layout_marginBottom="35dp"
+            android:selectAllOnFocus="false"
+            android:text="Correo Electrónico"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#49A078"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/cellphone"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_button"
+            android:layout_marginBottom="35dp"
+            android:selectAllOnFocus="false"
+            android:text="Número telefónico"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#49A078"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_button"
+            android:layout_marginBottom="35dp"
+            android:selectAllOnFocus="false"
+            android:text="Contraseña"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#49A078"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/veripassword"
+            android:layout_width="300dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/round_button"
+            android:layout_marginBottom="35dp"
+            android:selectAllOnFocus="false"
+            android:text="Verificar Contraseña"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#49A078"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/create_button"
+            android:layout_marginBottom="35dp"
+            android:selectAllOnFocus="false"
+            android:text="Crear"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#E16035"
+            android:textSize="27dp" />
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/backFrom"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/boton_de_back"
+        android:onClick="goBack"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+</androidx.constraintlayout.widget.ConstraintLayout>

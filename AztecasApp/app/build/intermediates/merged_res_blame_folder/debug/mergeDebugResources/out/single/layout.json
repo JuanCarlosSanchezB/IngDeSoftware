@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/activity_menu.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/activity_menu.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/panel_place.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/panel_place.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/payment_forms.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/payment_forms.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/fragment_dashboard.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/panel_ubicacion.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/panel_ubicacion.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/fragment_home.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/user.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/user.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/fragment_notifications.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/fragment_notifications.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/activity_main.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/login.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/login.xml"
+    },
+    {
+        "merged": "com.example.ejemplonavigation.app-mergeDebugResources-43:/layout/register.xml",
+        "source": "com.example.ejemplonavigation.app-main-46:/layout/register.xml"
+    }
+]
