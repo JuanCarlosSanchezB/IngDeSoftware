@@ -68,8 +68,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
                     android:text="Ensalada 1"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -88,7 +91,8 @@
                         android:layout_height="wrap_content"
                         android:text="1"
                         android:textSize="25sp"
-                        android:layout_marginTop="6dp"/>
+                        android:layout_marginTop="6dp"
+                        android:textColor="#000000"/>
 
                     <ImageButton
                         android:layout_width="50dp"
@@ -132,7 +136,8 @@
             android:hint="Añadir una nota al pedido"
             android:textAlignment="center"
             android:textColor="#49A078"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,17 +150,17 @@
                 android:layout_height="wrap_content"
                 android:text="Subtotal"
                 android:textColor="#216869"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:layout_marginStart="221dp"
+                android:layout_marginStart="150dp"
                 android:text="50.00 MXN"
                 android:textColor="#216869"
-                android:textSize="18sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -164,21 +169,23 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/create_button"
+            android:textAllCaps="false"
             android:text="Pagar"
             android:textColor="#E16035"
-            android:textSize="20dp" />
+            android:textSize="25sp" />
 
         <Button
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:background="@drawable/create_button"
             android:text="Añadir artículos"
+            android:textAllCaps="false"
             android:textColor="#E16035"
-            android:textSize="20dp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
